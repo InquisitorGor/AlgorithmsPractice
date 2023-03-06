@@ -4,7 +4,7 @@ package org.example.sorting;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public abstract class CommonSortingCases {
     Sorting sorting;
@@ -62,7 +62,7 @@ public abstract class CommonSortingCases {
 
 
         for (int i = 0; i < array.length - 1; i++) {
-            assertTrue(array[i] >= array.length - 1 - i);
+            assertEquals(array[i], array.length - 1 - i);
         }
     }
 
@@ -115,8 +115,8 @@ public abstract class CommonSortingCases {
     @Test
     public void testSortingInAscendingOrderWithLargeArray() {
         int[] array = new int[10000];
-        for (int i = 0; i < array.length; i++) {
-            array[i] = array.length - i;
+        for (int i = 0; i < array.length - 1; i++) {
+            array[i] = array.length - 1 - i;
         }
 
         long startTimeMillis = System.currentTimeMillis();
@@ -124,7 +124,7 @@ public abstract class CommonSortingCases {
         System.out.println("Time of execution is milis: " + (System.currentTimeMillis() - startTimeMillis));
 
         for (int i = 0; i < array.length - 1; i++) {
-            assertTrue(array[i] >= i);
+            assertEquals(array[i], i);
         }
     }
 
