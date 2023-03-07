@@ -12,7 +12,7 @@ public class SelectionSorting implements Sorting {
             for (int j = 0; j < i; j++) {
                 if (arrayToSort[j] > minElement) {
                     minElement = arrayToSort[j];
-                    swap(arrayToSort, i, j);
+                    SortingUtils.swap(arrayToSort, i, j);
                 }
             }
         }
@@ -29,15 +29,10 @@ public class SelectionSorting implements Sorting {
             for (int j = arrayToSort.length - 1; j > i; j--) {
                 if (arrayToSort[j] > maxElement) {
                     maxElement = arrayToSort[j];
-                    swap(arrayToSort, i, j);
+                    SortingUtils.swap(arrayToSort, i, j);
                 }
             }
         }
     }
 
-    private void swap(int[] array, int firstIndex, int secondIndex) {
-        int temp = array[firstIndex];
-        array[firstIndex] = array[secondIndex];
-        array[secondIndex] = temp;
-    }
 }
